@@ -48,3 +48,15 @@ func (list *LinkedList) InsertInEnd(value int) {
 		tempNode.Next = node
 	}
 }
+
+//delete the tail node
+func (list *LinkedList) RemoveHead() {
+
+	list.Head = list.Head.Next
+
+}
+
+//Delete the head node
+func (list *LinkedList) RemoveTail() {
+
+}
