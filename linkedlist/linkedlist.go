@@ -9,7 +9,6 @@ type Node struct {
 
 type LinkedList struct {
 	Head *Node
-	Tail *Node
 }
 
 //Linkedlist travers
@@ -49,14 +48,19 @@ func (list *LinkedList) InsertInEnd(value int) {
 	}
 }
 
-//delete the tail node
+//delete the head node
 func (list *LinkedList) RemoveHead() {
 
 	list.Head = list.Head.Next
 
 }
 
-//Delete the head node
+// delete tail node
 func (list *LinkedList) RemoveTail() {
+	var tempNode *Node = list.Head
+	for tempNode.Next.Next != nil {
+		tempNode = tempNode.Next
+	}
+	tempNode.Next = nil
 
 }
